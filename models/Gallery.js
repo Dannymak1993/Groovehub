@@ -15,6 +15,10 @@ Gallery.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        playlistId: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        }
     },
     {
         sequelize,
