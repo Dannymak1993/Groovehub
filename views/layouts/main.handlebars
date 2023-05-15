@@ -4,12 +4,24 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Welcome to Groovehub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hind+Madurai&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       type="text/css"
       href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css"
     />
-    <link rel="preload" href="https://open.spotifycdn.com/cdn/fonts/spoticon_regular_2.d728648c.woff2" as="font" type="font/woff2" crossorigin>
+    <link
+      rel="preload"
+      href="https://open.spotifycdn.com/cdn/fonts/spoticon_regular_2.d728648c.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
     <link rel="stylesheet" type="text/css" href="/css/style.css" />
   </head>
 
@@ -23,22 +35,31 @@
           id="my-info"
           data-off-canvas
           data-position="left"
+          style="z-index: 100;"
         >
           <div class="row column">
             <br />
-            <div>
-              <a href="/">Home</a>
+            <nav>
+              <a
+                href="/"
+                id="home-button"
+                style="display: block; margin-bottom: 10px;"
+              >Home</a>
               {{#if loggedIn}}
                 <button id="logout" class="btn-no-style">Logout</button>
               {{else}}
-                <a href="/login" class="login-form">Login</a>
+                <a
+                  href="/login"
+                  class="login-button"
+                  style="display: block; margin-bottom: 10px;"
+                >Login</a>
               {{/if}}
-            </div>
+            </nav>
             {{#if loggedIn}}
               <script src="/js/logout.js"></script>
             {{/if}}
-            <h5>Favorites</h5>
-            <h5>About Us</h5>
+            <a style="display: block; margin-bottom: 10px;">Favorites</a>
+            <a style="display: block; margin-bottom: 10px;">About Us</a>
           </div>
         </div>
 
@@ -64,35 +85,6 @@
 
           <hr />
 
-          <div class="row">
-            <div class="medium-6 columns">
-              <h3>Contact Me</h3>
-              <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor
-                neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla
-                enim. Phasellus molestie magna non est bibendum non venenatis
-                nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris
-                iaculis porttitor.
-              </p>
-              <ul class="menu">
-                <li><a href="#">Dribbble</a></li>
-                <li><a href="#">Facebook</a></li>
-                <li><a href="#">Yo</a></li>
-              </ul>
-            </div>
-            <div class="medium-6 columns">
-              <label>Name
-                <input type="text" placeholder="Name" />
-              </label>
-              <label>Email
-                <input type="text" placeholder="Email" />
-              </label>
-              <label>
-                Message
-                <textarea placeholder="holla at a designerd"></textarea>
-              </label>
-              <input type="submit" class="button expanded" value="Submit" />
-            </div>
-          </div>
         </div>
       </div>
     </div>
