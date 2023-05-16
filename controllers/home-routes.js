@@ -36,4 +36,14 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
+// Dynamic gallery route
+router.get('/:galleryName', (req, res) => {
+    const galleryName = req.params.galleryName;
+
+    res.render('gallery-details', {
+        galleryName,
+        currentGalleryUrl: `/${galleryName.toLowerCase()}`,
+    });
+});
+
 module.exports = router;
