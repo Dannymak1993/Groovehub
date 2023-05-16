@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Firebase RealTime Chat</title>
+  <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+
+  <header>
+    <h2>Firebase RealTime Chat</h2>
+  </header>
+
+  <div id="chat">
+    <!-- messages will display here -->
+    <ul id="messages"></ul>
+
+    <!-- form to send message -->
+    <!-- added onsubmit attribute -->
+    <form id="message-form" onsubmit="sendMessage(event)">
+      <input id="message-input" type="text" />
+      <button id="message-btn" type="submit">Send</button>
+    </form>
+  </div>
+
+  <!-- scripts -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+  <!-- Add this script tag -->
+  <script>
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyDkCM8DntB3i82diAT6C4VCIiMzbOobIAs",
+      authDomain: "groovehub-bf56e.firebaseapp.com",
+      databaseURL: "https://groovehub-bf56e-default-rtdb.firebaseio.com",
+      projectId: "groovehub-bf56e",
+      storageBucket: "groovehub-bf56e.appspot.com",
+      messagingSenderId: "291728374045",
+      appId: "1:291728374045:web:6da5d60b335fa242b3c9f4",
+      measurementId: "G-EGJP9W63KS",
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  <script src="index.js"></script>
+</body>
+
+</html>
