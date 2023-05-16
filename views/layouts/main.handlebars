@@ -10,7 +10,11 @@
       href="https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" type="text/css" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css"
+    />
     <link
       rel="preload"
       href="https://open.spotifycdn.com/cdn/fonts/spoticon_regular_2.d728648c.woff2"
@@ -31,7 +35,7 @@
           id="my-info"
           data-off-canvas
           data-position="left"
-          style="z-index: 100;"
+          style="z-index: 100; height: 400px; overflow-y: scroll;"
         >
           <div class="row column">
             <br />
@@ -40,7 +44,7 @@
                 href="/"
                 id="home-button"
                 style="display: block; margin-bottom: 10px;"
-              >Home</a>
+              >Home</a><br />
               {{#if loggedIn}}
                 <button id="logout" class="btn-no-style">Logout</button>
               {{else}}
@@ -48,13 +52,47 @@
                   href="/login"
                   class="login-button"
                   style="display: block; margin-bottom: 10px;"
-                >Login</a>
+                >Login</a><br />
               {{/if}}
             </nav>
             {{#if loggedIn}}
               <script src="/js/logout.js"></script>
             {{/if}}
-            <a style="display: block; margin-bottom: 10px;">About Us</a>
+            <a
+              href="#"
+              class="about-button"
+              onclick="toggleAboutUs()"
+              style="display: block; margin-bottom: 10px;"
+            >Meet the developers</a>
+            <div class="github-link" id="about-links">
+              <p>We are the creators of groovehub, a simple web app that allows
+                you to listen to different genres of music while commenting or
+                chatting with others in real time! Our focus was on simple,
+                fluid design that works well. If you have any feedback for us
+                please reach out to any of our team members below!
+              </p>
+              <a href="https://github.com/Dannymak1993">
+                <img src="/images/DannyPhoto.jpg" alt="Danny Mak's GitHub" />
+                <br />
+              </a>
+              <p style="text-align: center">Danny Mak</p><br />
+              <a href="https://github.com/Joecode22">
+                <img src="/images/JoePhoto.jpg" alt="Joe Mckinney's GitHub" />
+                <br />
+              </a>
+              <p style="text-align: center">Joe Mckinney</p><br />
+              <a href="https://github.com/oscarmedina234">
+                <img src="/images/OscarPhoto.jpg" alt="Oscar Melina's GitHub" />
+                <br />
+              </a>
+              <p style="text-align: center">Oscar Medina</p><br />
+              <a href="https://github.com/SamH16205">
+                <img src="/images/SamPhoto.jpg" alt="Sam Halloum's GitHub" />
+                <br />
+              </a>
+              <p style="text-align: center">Sam Halloum</p><br />
+              <script src="/js/aboutUs.js"></script>
+            </div>
           </div>
         </div>
 
@@ -79,6 +117,9 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <div id="bottom-banner">
     </div>
 
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
