@@ -12,8 +12,28 @@ h2 {
     font-size: 50px;
 }
 
+#home-button:hover,
+.login-button:hover,
+.about-button:hover {
+    color: rgb(47, 255, 0);
+}
+
+#home-button,
+.login-button,
+.about-button {
+    font-size: 25px;
+    text-decoration: underline;
+}
+
+#about-links {
+    font-size: 18px;
+    display:none;
+}
+
 .off-canvas-content {
     background: linear-gradient(to bottom, #df5c28, #c9b831);
+    padding-bottom: 30px;
+
 }
 
 .callout.primary {
@@ -69,6 +89,41 @@ h2 {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+}
+
+.github-link img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.github-link img:hover {
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+        0% {transform: translateX(0);}
+        
+            10% {transform: translateX(-1px) rotate(-1deg);}
+        
+            20% {transform: translateX(1px) rotate(1deg);}
+        
+            30% {transform: translateX(-1px) rotate(-1deg);}
+        
+            40% {transform: translateX(1px) rotate(1deg);}
+        
+            50% {transform: translateX(-1px) rotate(-1deg);}
+        
+            60% {transform: translateX(1px) rotate(1deg);}
+        
+            70% {transform: translateX(-1px) rotate(-1deg);}
+        
+            80% {transform: translateX(1px) rotate(1deg);}
+        
+            90% {transform: translateX(-1px) rotate(-1deg);}
+        
+            100% {transform: translateX(0);}
 }
 
 @media screen and (min-width: 640px) {
