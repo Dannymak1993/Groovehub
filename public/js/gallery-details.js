@@ -27,7 +27,7 @@ function clearGallery(galleryName, playlistId) {
     const galleryContainer = document.querySelector('.gallery-container');
     galleryContainer.innerHTML = '';
 
-    const galleryNameElement = document.createElement('h2');
+    const galleryNameElement = document.createElement('p');
     galleryNameElement.textContent = galleryName;
     galleryNameElement.classList.add('centered-title');
     galleryContainer.appendChild(galleryNameElement);
