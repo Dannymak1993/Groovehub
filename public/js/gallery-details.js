@@ -1,6 +1,10 @@
 function clearGallery(galleryName, playlistId) {
-  const galleryContainer = document.querySelector('.gallery-container');
-  galleryContainer.innerHTML = '';
+
+    event.preventDefault()
+    console.log('clearGallery function called');
+    const galleryContainer = document.querySelector('.gallery-container');
+    galleryContainer.innerHTML = '';
+
 
   const galleryNameElement = document.createElement('p');
   galleryNameElement.textContent = galleryName;
@@ -11,6 +15,7 @@ function clearGallery(galleryName, playlistId) {
   const wrapperDiv = document.createElement('div');
   wrapperDiv.classList.add('grid-x', 'grid-margin-x', 'playlist-chat-wrapper');
   galleryContainer.appendChild(wrapperDiv);
+
 
   const playlistContainer = document.createElement('div');
   playlistContainer.classList.add('cell', 'small-12', 'medium-6', 'large-6', 'playlist-container');
@@ -43,3 +48,4 @@ function clearGallery(galleryName, playlistId) {
   console.log('Before initializeChat')
   initializeChat(playlistId);
 }
+

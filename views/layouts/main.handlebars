@@ -46,7 +46,12 @@
                 style="display: block; margin-bottom: 10px;"
               >Home</a><br />
               {{#if loggedIn}}
-                <button id="logout" class="btn-no-style">Logout</button>
+                <div class="button-container">
+                  <button
+                    id="logout"
+                    class="btn-no-style login-button"
+                  >Logout</button><br />
+                </div>
               {{else}}
                 <a
                   href="/login"
@@ -91,8 +96,14 @@
                 <br />
               </a>
               <p style="text-align: center">Sam Halloum</p><br />
-              <script src="/js/aboutUs.js"></script>
+              <div class="logo-and-copyright">
+                <img src="/images/Logo.jpg" alt="Groovehub Logo" id="logo" />
+                <div class="copyright">
+                  &copy; 2023
+                </div>
+              </div>
             </div>
+            <script src="/js/aboutUs.js"></script>
           </div>
         </div>
 

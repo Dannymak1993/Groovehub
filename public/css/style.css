@@ -12,6 +12,21 @@ h2 {
     font-size: 50px;
 }
 
+#logo {
+    width: 70px;
+    height: auto;
+}
+
+.github-link #logo:hover {
+    animation: none;
+}
+
+ .logo-and-copyright {
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+ }
+
 #home-button:hover,
 .login-button:hover,
 .about-button:hover {
@@ -23,6 +38,11 @@ h2 {
 .about-button {
     font-size: 25px;
     text-decoration: underline;
+    color: rgb(50, 167, 209);
+}
+
+.button-container {
+    margin-bottom: 30px;
 }
 
 #about-links {
@@ -102,6 +122,13 @@ h2 {
     animation: shake 0.5s;
 }
 
+
+.login-card {
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
 @keyframes shake {
     0% {
         transform: translateX(0);
@@ -164,10 +191,43 @@ h2 {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    .gallery-item {
+    .gallery-container .gallery-item {
         width: 450px;
         height: 450px;
     }
+
+    
+    .forms-container {
+        margin-right: -70px !important;
+    }
+}
+
+
+.forms-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    max-width: 0px;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 640px) {
+    .forms-container {
+        flex-wrap: wrap;
+    }
+}
+
+.login-card {
+    text-align: center;
+    min-width: 350px;
+    border: 2px solid #000000;
+    padding: 20px;
+}
+
+.form-group label {
+    text-align: left;
+}
+
 }
 
 /* styling for chat */
@@ -249,3 +309,4 @@ h2 {
   }
 
   /* end styling for chat */
+
