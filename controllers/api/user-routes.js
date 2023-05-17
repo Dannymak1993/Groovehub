@@ -12,7 +12,7 @@ router.post('/', async (req, res) => {
 
         req.session.save(() => {
             req.session.loggedIn = true;
-
+            req.session.username = dbUserData.username; // this line savea the username in the session
             res.status(200).json(dbUserData);
         });
     } catch (err) {
@@ -48,7 +48,7 @@ router.post('/login', async (req, res) => {
 
         req.session.save(() => {
             req.session.loggedIn = true;
-
+            req.session.username = dbUserData.username; // this line savea the username in the session
             res
                 .status(200)
                 .json({ user: dbUserData, message: 'You are now logged in!' });
@@ -67,6 +67,16 @@ router.post('/logout', (req, res) => {
         });
     } else {
         res.status(404).end();
+    }
+});
+
+// route to get current user's username
+router.get('/current', (req, res) => {
+    console.log('in the route named current')
+    if (req.session.loggedIn) {
+        res.status(200).json({ username: req.session.username });
+    } else {
+        res.status(401).json({ message: 'Not logged in' });
     }
 });
 
