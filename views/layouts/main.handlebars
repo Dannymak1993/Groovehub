@@ -46,7 +46,12 @@
                 style="display: block; margin-bottom: 10px;"
               >Home</a><br />
               {{#if loggedIn}}
-                <button id="logout" class="btn-no-style">Logout</button>
+                <div class="button-container">
+                  <button
+                    id="logout"
+                    class="btn-no-style login-button"
+                  >Logout</button><br />
+                </div>
               {{else}}
                 <a
                   href="/login"
@@ -113,7 +118,7 @@
             </div>
           </div>
           <div class="gallery">
-            <div class="gallery-container">
+            <div class="homepage-gallery-container">
               {{{body}}}
             </div>
           </div>

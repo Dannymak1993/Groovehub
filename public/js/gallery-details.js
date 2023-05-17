@@ -1,4 +1,6 @@
 function clearGallery(galleryName, playlistId) {
+    event.preventDefault()
+    console.log('clearGallery function called');
     const galleryContainer = document.querySelector('.gallery-container');
     galleryContainer.innerHTML = '';
 
@@ -20,3 +22,4 @@ function clearGallery(galleryName, playlistId) {
     playlistIframe.loading = 'lazy';
     playlistContainer.appendChild(playlistIframe);
 }
+

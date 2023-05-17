@@ -23,11 +23,16 @@ h2 {
 .about-button {
     font-size: 25px;
     text-decoration: underline;
+    color: rgb(50, 167, 209);
+}
+
+.button-container {
+    margin-bottom: 30px;
 }
 
 #about-links {
     font-size: 18px;
-    display:none;
+    display: none;
 }
 
 .off-canvas-content {
@@ -41,19 +46,19 @@ h2 {
     text-align: center;
 }
 
-.gallery-container {
+.homepage-gallery-container {
     display: grid;
     gap: 70px;
     margin-top: 20px;
 }
 
-.gallery-item {
+.homepage-gallery-item {
     position: relative;
     width: 100%;
     height: auto;
 }
 
-.gallery-image {
+.homepage-gallery-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -102,28 +107,63 @@ h2 {
     animation: shake 0.5s;
 }
 
+#gallery-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-card {
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
 @keyframes shake {
-        0% {transform: translateX(0);}
-        
-            10% {transform: translateX(-1px) rotate(-1deg);}
-        
-            20% {transform: translateX(1px) rotate(1deg);}
-        
-            30% {transform: translateX(-1px) rotate(-1deg);}
-        
-            40% {transform: translateX(1px) rotate(1deg);}
-        
-            50% {transform: translateX(-1px) rotate(-1deg);}
-        
-            60% {transform: translateX(1px) rotate(1deg);}
-        
-            70% {transform: translateX(-1px) rotate(-1deg);}
-        
-            80% {transform: translateX(1px) rotate(1deg);}
-        
-            90% {transform: translateX(-1px) rotate(-1deg);}
-        
-            100% {transform: translateX(0);}
+    0% {
+        transform: translateX(0);
+    }
+
+    10% {
+        transform: translateX(-1px) rotate(-1deg);
+    }
+
+    20% {
+        transform: translateX(1px) rotate(1deg);
+    }
+
+    30% {
+        transform: translateX(-1px) rotate(-1deg);
+    }
+
+    40% {
+        transform: translateX(1px) rotate(1deg);
+    }
+
+    50% {
+        transform: translateX(-1px) rotate(-1deg);
+    }
+
+    60% {
+        transform: translateX(1px) rotate(1deg);
+    }
+
+    70% {
+        transform: translateX(-1px) rotate(-1deg);
+    }
+
+    80% {
+        transform: translateX(1px) rotate(1deg);
+    }
+
+    90% {
+        transform: translateX(-1px) rotate(-1deg);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
 }
 
 @media screen and (min-width: 640px) {
@@ -138,12 +178,42 @@ h2 {
 }
 
 @media screen and (min-width: 1775px) {
-    .gallery-container {
+    .homepage-gallery-container {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    .gallery-item {
+    .homepage-gallery-container .homepage-gallery-item {
         width: 450px;
         height: 450px;
     }
+    
+    .forms-container {
+        margin-right: -70px !important;
+    }
+}
+
+
+.forms-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    max-width: 0px;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 640px) {
+    .forms-container {
+        flex-wrap: wrap;
+    }
+}
+
+.login-card {
+    text-align: center;
+    min-width: 350px;
+    border: 2px solid #000000;
+    padding: 20px;
+}
+
+.form-group label {
+    text-align: left;
 }

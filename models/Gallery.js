@@ -18,7 +18,11 @@ Gallery.init(
         playlistId: {
             type: DataTypes.STRING,
             allowNull: false,
-        }
+        },
+        genre: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
     },
     {
         sequelize,
