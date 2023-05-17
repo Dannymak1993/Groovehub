@@ -12,15 +12,20 @@ h2 {
     font-size: 50px;
 }
 
-.logo {
-    width: 80px;
+#logo {
+    width: 70px;
     height: auto;
 }
 
-.logo-title {
-    display: inline-block;
-    vertical-align: middle;
+.github-link #logo:hover {
+    animation: none;
 }
+
+ .logo-and-copyright {
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+ }
 
 #home-button:hover,
 .login-button:hover,
@@ -56,19 +61,19 @@ h2 {
     text-align: center;
 }
 
-.homepage-gallery-container {
+.gallery-container {
     display: grid;
     gap: 70px;
     margin-top: 20px;
 }
 
-.homepage-gallery-item {
+.gallery-item {
     position: relative;
     width: 100%;
     height: auto;
 }
 
-.homepage-gallery-image {
+.gallery-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -117,12 +122,6 @@ h2 {
     animation: shake 0.5s;
 }
 
-#gallery-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
 
 .login-card {
     text-align: center;
@@ -188,11 +187,11 @@ h2 {
 }
 
 @media screen and (min-width: 1775px) {
-    .homepage-gallery-container {
+    .gallery-container {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    .homepage-gallery-container .homepage-gallery-item {
+    .gallery-container .gallery-item {
         width: 450px;
         height: 450px;
     }
