@@ -241,6 +241,11 @@ h2 {
     .playlist-chat-wrapper {
       display: flex;
     }
+    .playlist-container,
+    .chat-container {
+      flex: 1;
+      min-width: 300px; /* Adjust this value to your desired width */
+    }
   }
 
   /* end styling for chat */
