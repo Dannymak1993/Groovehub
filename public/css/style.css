@@ -195,6 +195,7 @@ h2 {
         width: 450px;
         height: 450px;
     }
+
     
     .forms-container {
         margin-right: -70px !important;
@@ -226,3 +227,86 @@ h2 {
 .form-group label {
     text-align: left;
 }
+
+}
+
+/* styling for chat */
+
+.centered-title {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.chat {
+    max-height: 352px;
+    overflow-y: auto;
+    background-color: #f8f8f8;
+    padding: 1rem;
+}
+
+.chat ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.chat li {
+    padding: 5px 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+.chat li.sent {
+    background-color: #4caf50;
+    color: white;
+}
+
+.chat li.receive {
+    background-color: #e0e0e0;
+}
+
+.playlist-chat-wrapper {
+    margin-top: 1rem;
+}
+
+.playlist-container,
+.chat-container {
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.chat {
+    display: flex;
+    flex-direction: column;
+    height: 352px;
+    background-color: #ffffff;
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+}
+
+.chat ul {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 1rem;
+    list-style: none;
+    padding: 0;
+}
+
+.chat input {
+    flex: 1;
+    margin-right: 0.5rem;
+}
+
+@media screen and (min-width: 640px) {
+    .playlist-chat-wrapper {
+      display: flex;
+    }
+    .playlist-container,
+    .chat-container {
+      flex: 1;
+      min-width: 300px; /* Adjust this value to your desired width */
+    }
+  }
+
+  /* end styling for chat */
+
