@@ -65,4 +65,7 @@ function clearGallery(galleryName, playlistId) {
       <button id="message-btn" type="submit">Send</button>
     </form>`
     chatContainer.appendChild(chatWindow);
+    // Call the initializeChat function and pass the playlistId
+    console.log('Before initializeChat')
+    initializeChat(playlistId);
 }
