@@ -13,12 +13,9 @@ router.get('/', async (req, res) => {
                 imageSrc: `/images/${galleryObj.name}.jpg`, // Add image source path
             };
         });
-
-        const showPlaylist = Array(galleries.length).fill(false);
-
+       
         res.render('homepage', {
             galleries,
-            showPlaylist,
             loggedIn: req.session.loggedIn,
         });
     } catch (err) {
@@ -31,11 +28,12 @@ router.get('/', async (req, res) => {
 router.get('/gallery/:id', withAuth, async (req, res) => {
     try {
         const dbGalleryData = await Gallery.findByPk(req.params.id, {});
-
         const gallery = dbGalleryData.get({ plain: true });
-        res.render('gallery', { gallery, loggedIn: req.session.loggedIn });
+        console.log(gallery);
+        res.render('playlist', { gallery, loggedIn: req.session.loggedIn
+        });
     } catch (err) {
-        console.log(err);
+        console.log(err+"this is the problem");
         res.status(500).json(err);
     }
 });
