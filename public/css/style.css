@@ -276,7 +276,8 @@ h2 {
 .chat {
     display: flex;
     flex-direction: column;
-    height: 352px;
+    height: 800px;
+    width: 500px;
     background-color: #ffffff;
     border: 1px solid #e1e1e1;
     border-radius: 4px;
