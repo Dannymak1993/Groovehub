@@ -1,6 +1,12 @@
 //NOTE THIS CODE WAS DEVELOPED ON TOP OF STARTER CODE THAT CAN BE FOUND HERE:
 // https://www.cometchat.com/tutorials/how-to-build-a-chat-app-with-firebase
 
+//This function scrolls the chat window to the bottom
+function scrollToBottom() {
+  const chat = document.querySelector('.chat ul');
+  chat.scrollTop = chat.scrollHeight;
+}
+
 //This function is to create a properly formatted timestamp
 function formatTimestamp(timestamp) {
   const date = new Date(timestamp);
@@ -41,6 +47,7 @@ function initializeChat(db, playlistId) {
         const message = messageInput.value;
 
         messageInput.value = "";
+        scrollToBottom(); //scroll to bottom when the current user sends a message
 
         document
           .getElementById("messages")
@@ -62,6 +69,7 @@ function initializeChat(db, playlistId) {
         const messages = snapshot.val();
         const message = `<li class=${username === messages.username ? "sent" : "receive"}><span>${messages.username} (${formatTimestamp(messages.timestamp)}): </span>${messages.message}</li>`; 
         document.getElementById("messages").innerHTML += message;
+        scrollToBottom(); //scroll to bottom after adding receiving a new message by other users
       });
 
       
