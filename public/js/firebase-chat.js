@@ -7,13 +7,23 @@ function scrollToBottom() {
   chat.scrollTop = chat.scrollHeight;
 }
 
-//This function is to create a properly formatted timestamp
 function formatTimestamp(timestamp) {
   const date = new Date(timestamp);
-  const hours = String(date.getHours()).padStart(2, '0');
+  let hours = date.getHours();
   const minutes = String(date.getMinutes()).padStart(2, '0');
-  const seconds = String(date.getSeconds()).padStart(2, '0');
-  return `${hours}:${minutes}:${seconds}`;
+  
+  // Determine AM or PM suffix based on the hour
+  const period = hours >= 12 ? 'PM' : 'AM';
+  
+  // Convert hour from military time (0 - 23) to standard time (1 - 12)
+  hours = hours % 12;
+  // If the hours is 0 (i.e., 12 AM in military time), change it to 12
+  hours = hours ? hours : 12;
+  
+  // Pad the hours with 0 if necessary
+  const hoursFormatted = String(hours).padStart(2, '0');
+  
+  return `${hoursFormatted}:${minutes} ${period}`;
 }
 
 
@@ -67,7 +77,7 @@ function initializeChat(db, playlistId) {
 
       fetchChat.on("child_added", function (snapshot) {
         const messages = snapshot.val();
-        const message = `<li class=${username === messages.username ? "sent" : "receive"}><span>${messages.username} (${formatTimestamp(messages.timestamp)}):</span>${messages.message}</li>`; 
+        const message = `<li class=${username === messages.username ? "sent" : "receive"}><span>(${formatTimestamp(messages.timestamp)}): ${messages.username}: ${messages.message}</span></li>`;
         document.getElementById("messages").innerHTML += message;
         scrollToBottom(); //scroll to bottom after adding receiving a new message by other users
       });
