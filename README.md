@@ -6,6 +6,7 @@
    - [Usage](#use)
    - [Contribution Guidlines](#con) 
    - [Test Instructions](#test)
+   - [Frameworks and resources](#frame)
    - [Questions/Contact](#ques)
    - [License](#license) 
   
@@ -17,12 +18,33 @@
   
   # Usage <a id="use"></a>
   Users must create an account with a valid email before using. From there, users can click on one of the genres on the home page and be redirected to a page with a playlist from the selected genre and a chat discussing music within the genre.
-  
+
+  # Images
+  Login
+  <br>
+  <img src="./public/images/Groovehub%20Login.png" width ="600" height="300">
+  <br>
+  Homepage
+  <br>
+  <img src="./public/images/GrooveHub%20Homepage.png" width ="600" height="300">
+  <br>
+  Chat/Playlist Page
+  <br>
+  <img src="./public/images/Chat%20Page.png" width ="600" height="300">
   # Contribution Guidelines <a id="con"></a>
   None
   
   # Test Instructions <a id="test"></a>
   N/A
+
+  # Frameworks/Resources Used <a id="frame"></a>
+  - Express.js
+  - MySQL
+  - Sequelize
+  - Handlebars.js
+  - Google Firebase
+  - Spotify Playlist API
+
   
   # Questions/Contact <a id="ques"></a>
   <a href="https://github.com/Dannymak1993">Danny Mak</a>
