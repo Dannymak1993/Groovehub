@@ -2,39 +2,14 @@ const { Gallery } = require('../models');
 
 const gallerydata = [
     {
-        name: 'Electronic',
-        playlistId: '5MLf6MBHHs6YDtTERE66RS',
-        genre: 'Electronic',
-    },
-    {
-        name: 'Hip Hop',
-        playlistId: '2Z2WhCLV5yILWQabtriCiG',
-        genre: 'Hip Hop',
-    },
-    {
-        name: 'Classical',
-        playlistId: '3CBWk7vCr7QhbDMAaOF8Ej',
-        genre: 'Classical',
-    },
-    {
-        name: 'Jazz',
-        playlistId: '0L1MSYfkwfRMbDrt7p7Dd1',
-        genre: 'Jazz',
-    },
-    {
         name: 'Anime',
         playlistId: '13D1ZGY11YGeUSVGosTy6K',
         genre: 'Anime',
     },
     {
-        name: 'K-pop',
-        playlistId: '5X0GlUpZje14AdggmJbPVb',
-        genre: 'K-pop',
-    },
-    {
-        name: 'Rock',
-        playlistId: '2eH2OlE2CWb50U7GrL2m65',
-        genre: 'Rock',
+        name: 'Classical',
+        playlistId: '3CBWk7vCr7QhbDMAaOF8Ej',
+        genre: 'Classical',
     },
     {
         name: 'Country',
@@ -45,6 +20,31 @@ const gallerydata = [
         name: 'Disney',
         playlistId: '13YukHnAvQGCVzhEVaXqgY',
         genre: 'Disney',
+    },
+    {
+        name: 'Electronic',
+        playlistId: '5MLf6MBHHs6YDtTERE66RS',
+        genre: 'Electronic',
+    },
+    {
+        name: 'Hip Hop',
+        playlistId: '2Z2WhCLV5yILWQabtriCiG',
+        genre: 'Hip Hop',
+    },
+    {
+        name: 'Jazz',
+        playlistId: '0L1MSYfkwfRMbDrt7p7Dd1',
+        genre: 'Jazz',
+    },
+    {
+        name: 'K-pop',
+        playlistId: '5X0GlUpZje14AdggmJbPVb',
+        genre: 'K-pop',
+    },
+    {
+        name: 'Rock',
+        playlistId: '2eH2OlE2CWb50U7GrL2m65',
+        genre: 'Rock',
     },
 ];
 
