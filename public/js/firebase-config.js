@@ -1,4 +1,7 @@
-// Your web app's Firebase configuration
+//NOTE THIS CODE WAS DEVELOPED ON TOP OF STARTER CODE THAT CAN BE FOUND HERE:
+// https://www.cometchat.com/tutorials/how-to-build-a-chat-app-with-firebase
+
+// Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyDkCM8DntB3i82diAT6C4VCIiMzbOobIAs",
     authDomain: "groovehub-bf56e.firebaseapp.com",

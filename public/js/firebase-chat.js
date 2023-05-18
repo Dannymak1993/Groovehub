@@ -1,11 +1,28 @@
-console.log('First line of the firebase-chat.js');
+//NOTE THIS CODE WAS DEVELOPED ON TOP OF STARTER CODE THAT CAN BE FOUND HERE:
+// https://www.cometchat.com/tutorials/how-to-build-a-chat-app-with-firebase
 
+//This function scrolls the chat window to the bottom
+function scrollToBottom() {
+  const chat = document.querySelector('.chat ul');
+  chat.scrollTop = chat.scrollHeight;
+}
+
+//This function is to create a properly formatted timestamp
+function formatTimestamp(timestamp) {
+  const date = new Date(timestamp);
+  const hours = String(date.getHours()).padStart(2, '0');
+  const minutes = String(date.getMinutes()).padStart(2, '0');
+  const seconds = String(date.getSeconds()).padStart(2, '0');
+  return `${hours}:${minutes}:${seconds}`;
+}
+
+
+//This function gets the current user's usename from the '/current' user route
 async function getUsername() {
-  console.log('Inside the getUsername function');
   const response = await fetch('/api/users/current');
   if (response.ok) {
     const data = await response.json();
-    console.log(data.username); //troubleshooting
+    
     return data.username;
   } else {
     console.error("Failed to get the current user's username");
@@ -13,18 +30,16 @@ async function getUsername() {
   }
 }
 
-
+//This function receives the db object and playlist variable and sets up a unique chat instance for a particular instance 
 function initializeChat(db, playlistId) {
-  console.log('Inside the initializeChat function');
-
-  console.log(playlistId);
-
+  //we call our get username function and use .then to resolve the promise
   getUsername().then((fetchedUsername) => {
     let username;
     if (fetchedUsername) {
       username = fetchedUsername;
 
       function sendMessage(e) {
+        //prevent default behavior
         e.preventDefault();
 
         const timestamp = Date.now();
@@ -32,6 +47,7 @@ function initializeChat(db, playlistId) {
         const message = messageInput.value;
 
         messageInput.value = "";
+        scrollToBottom(); //scroll to bottom when the current user sends a message
 
         document
           .getElementById("messages")
@@ -40,26 +56,26 @@ function initializeChat(db, playlistId) {
         db.ref('messages/' + playlistId + '/' + timestamp).set({
           username,
           message,
+          timestamp, //store the timestamp into the firebase db
         });
       }
 
-      // Assign the sendMessage function to the global scope, so it can be accessed in the HTML
+      // This function assigns the sendMessage function to the global scope, so it can be accessed in the HTML
       window.sendMessage = sendMessage;
 
       const fetchChat = db.ref('messages/' + playlistId);
 
       fetchChat.on("child_added", function (snapshot) {
         const messages = snapshot.val();
-        const message = `<li class=${username === messages.username ? "sent" : "receive"
-          }><span>${messages.username}: </span>${messages.message}</li>`;
+        const message = `<li class=${username === messages.username ? "sent" : "receive"}><span>${messages.username} (${formatTimestamp(messages.timestamp)}):</span>${messages.message}</li>`; 
         document.getElementById("messages").innerHTML += message;
+        scrollToBottom(); //scroll to bottom after adding receiving a new message by other users
       });
 
-      console.log("Firebase chat loaded");
+      
     } else {
-      // Handle the case when the username is not fetched properly
+      // Handle the case when the username is not fetched properly 
       console.error('Failed to fetch the username');
     }
   });
 }
-
