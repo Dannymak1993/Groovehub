@@ -5,7 +5,7 @@
 <div id="iframe-chat-div">
   {{!-- <div id="iframe-div"> --}}
     <iframe style="border-radius:12px"
-      src="https://open.spotify.com/embed/playlist/{{gallery.playlistId}}?utm_source=generator" width="500px"
+      src="https://open.spotify.com/embed/playlist/{{gallery.playlistId}}?utm_source=generator" width="600px"
       height="800px" frameBorder="0" allowfullscreen=""
       allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
   {{!-- </div> --}}
@@ -14,7 +14,7 @@
   <div id="chat-bg" class="chat">
     <ul id="messages"></ul>
     <form id="message-form" onsubmit="sendMessage(event)">
-      <input id="message-input" type="text" placeholder="Type a message" />
+      <input id="message-input" type="text" placeholder="type a live message to others in this room!" onfocus="this.placeholder = ''" onblur="this.placeholder = 'type a live message to others in this room!'" />
       <button id="message-btn" type="submit">Send</button>
     </form>
   </div>
