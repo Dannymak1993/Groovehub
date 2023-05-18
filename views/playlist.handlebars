@@ -1,6 +1,7 @@
 <div class="centered-title">
   <h2>{{gallery.genre}}</h2>
   <span class="num-users"></span>
+  <ul id="user-list"></ul>
 </div>
 
 <div id="iframe-chat-div">
@@ -9,17 +10,20 @@
       src="https://open.spotify.com/embed/playlist/{{gallery.playlistId}}?utm_source=generator" width="600px"
       height="600px" frameBorder="0" allowfullscreen=""
       allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-  {{!-- </div> --}}
+    {{!--
+  </div> --}}
 
-{{!-- <div id="chat-div"> --}}
-  <div id="chat-bg" class="chat">
-    <ul id="messages"></ul>
-    <form id="message-form" onsubmit="sendMessage(event)">
-      <input id="message-input" type="text" placeholder="type a live message to others in this room!" onfocus="this.placeholder = ''" onblur="this.placeholder = 'type a live message to others in this room!'" />
-      <button id="message-btn" type="submit">Send</button>
-    </form>
-  </div>
-{{!-- </div> --}}
+  {{!-- <div id="chat-div"> --}}
+    <div id="chat-bg" class="chat">
+      <ul id="messages"></ul>
+      <form id="message-form" onsubmit="sendMessage(event)">
+        <input id="message-input" type="text" placeholder="type a live message to others in this room!"
+          onfocus="this.placeholder = ''" onblur="this.placeholder = 'type a live message to others in this room!'" />
+        <button id="message-btn" type="submit">Send</button>
+      </form>
+    </div>
+    {{!--
+  </div> --}}
 </div>
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
@@ -27,8 +31,9 @@
 <script src="/js/firebase-chat.js"></script>
 
 <script>
-  window.onload = function() {
+  window.onload = function () {
     const numUsersElement = document.querySelector('.num-users');
-    initializeChat(db, '{{gallery.playlistId}}', numUsersElement);
+    const userListElement = document.getElementById('user-list');
+    initializeChat(db, '{{gallery.playlistId}}', numUsersElement, userListElement);
   }
 </script>
