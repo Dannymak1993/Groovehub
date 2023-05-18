@@ -21,6 +21,10 @@
   Users must create an account with a valid email before using. From there, users can click on one of the genres on the home page and be redirected to a page with a playlist from the selected genre and a chat discussing music within the genre. Additionally, users must log into a Spotify account to listen to the playlists.
 
   # Images
+  Wireframe
+  <br>
+  <img src="./public/images/Music%20app%20proposal.png" width ="400" height="600">
+  <br>
   Login
   <br>
   <img src="./public/images/Groovehub%20Login.png" width ="600" height="300">
