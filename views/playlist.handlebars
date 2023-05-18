@@ -1,5 +1,6 @@
 <div class="centered-title">
   <h2>{{gallery.genre}}</h2>
+  <span class="num-users"></span>
 </div>
 
 <div id="iframe-chat-div">
@@ -26,5 +27,8 @@
 <script src="/js/firebase-chat.js"></script>
 
 <script>
-  initializeChat(db, '{{gallery.playlistId}}');
+  window.onload = function() {
+    const numUsersElement = document.querySelector('.num-users');
+    initializeChat(db, '{{gallery.playlistId}}', numUsersElement);
+  }
 </script>
