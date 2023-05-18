@@ -15,17 +15,28 @@ h2 {
 #logo {
     width: 70px;
     height: auto;
+    filter: invert(100%);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 85px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .github-link #logo:hover {
     animation: none;
 }
 
- .logo-and-copyright {
-    display:flex;
-    flex-direction:column;
+.logo-and-copyright {
+    display: flex;
+    flex-direction: column;
     align-items: center;
- }
+}
 
 #home-button:hover,
 .login-button:hover,
@@ -39,6 +50,16 @@ h2 {
     font-size: 25px;
     text-decoration: underline;
     color: rgb(50, 167, 209);
+}
+
+.sidebar {
+    background-color: #000000;
+    color: #e0e0e0;
+}
+
+.off-canvas {
+    background-color: #000000;
+    color: #e0e0e0;
 }
 
 .button-container {
@@ -56,10 +77,10 @@ h2 {
 }
 
 
-#iframe-chat-div{
+#iframe-chat-div {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .callout.primary {
@@ -202,9 +223,10 @@ h2 {
         height: 450px;
     }
 
-    
+
     .forms-container {
-        margin-right: -70px !important;
+        max-width: 1200px !important;
+        margin: 0 auto;
     }
 }
 
@@ -241,13 +263,6 @@ h2 {
     margin-bottom: 1rem;
 }
 
-.chat {
-    max-height: 600px;
-    overflow-y: auto;
-    background-color: #f8f8f8;
-    padding: 1rem;
-}
-
 .chat ul {
     list-style-type: none;
     padding: 0;
@@ -260,7 +275,8 @@ h2 {
     border-radius: 5px;
 }
 
-.chat li.sent, .chat li.receive{
+.chat li.sent,
+.chat li.receive {
 
     display: block;
     max-width: 70%;
@@ -271,15 +287,16 @@ h2 {
 }
 
 .chat li.sent {
-    background-color: #4caf50;
+    background-color: #42ca47;
     color: white;
     margin-left: auto;
     margin-right: 10px;
     border-bottom-right-radius: 0;
+    word-wrap: break-word;
 }
 
 .chat li.receive {
-    background-color: #e0e0e0;
+    background-color: #888484;
     margin-left: 10px;
     margin-right: auto;
     border-bottom-left-radius: 0;
@@ -300,9 +317,13 @@ h2 {
     flex-direction: column;
     height: 800px;
     width: 600px;
-    background-color: #ffffff;
-    border: 1px solid #e1e1e1;
-    border-radius: 4px;
+    background-color: #9f9898;
+    border: 4px solid #000000;
+    border-radius: 15px;
+    max-height: 800px;
+    min-width: 300px;
+    overflow-y: auto;
+    padding: 1rem;
 }
 
 .chat ul {
@@ -316,18 +337,73 @@ h2 {
 .chat input {
     flex: 1;
     margin-right: 0.5rem;
+    color:#000000;
 }
 
 @media screen and (min-width: 640px) {
     .playlist-chat-wrapper {
-      display: flex;
+        display: flex;
     }
+
     .playlist-container,
     .chat-container {
-      flex: 1;
-      min-width: 300px; /* Adjust this value to your desired width */
+        flex: 1;
+        min-width: 300px;
+        /* Adjust this value to your desired width */
     }
-  }
+}
 
-  /* end styling for chat */
+@media screen and (max-width: 600px) {
+    #iframe-chat-div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width:100%;
+        gap:25px;
+        flex-wrap:wrap;
+    }
 
+    
+
+    .playlist-container,
+    .chat-container {
+        width: 100%;
+    }
+
+    .playlist-chat-wrapper {
+        margin-top: 1rem;
+        display: flex;
+        /* Add this line to make the containers flex */
+       
+        flex-wrap: wrap;
+        /* Add this line to wrap the containers */
+       
+    }
+
+    .playlist-container,
+    .chat-container, #chat-bg {
+        padding: 1rem;
+        box-sizing: border-box;
+        flex: 1;
+        /* Add this line to make the containers flexible */
+        min-width: 300px;
+        width: 100%;
+        /* Add this line to make the containers occupy full width */
+    }
+}
+
+#message-btn {
+    border: 2px solid #000000;
+    background-color: #dddddd;
+    padding: 8px 16px;
+    border-radius: 5px;
+}
+
+/* Add hover effect to the send button */
+#message-btn:hover {
+    background-color: #43b1d5;
+}
+
+.form-input {
+    color: black;
+}

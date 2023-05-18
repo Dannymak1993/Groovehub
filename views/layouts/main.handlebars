@@ -37,7 +37,7 @@
           data-position="left"
           style="z-index: 100; height: 400px; overflow-y: scroll;"
         >
-          <div class="row column">
+          <div class="row column sidebar">
             <br />
             <nav>
               <a
@@ -120,24 +120,28 @@
           </div>
           <div class="callout primary">
             <div class="row column">
-              <h1>Groovehub</h1>
+              <div class="logo-container">
+                <img src="/images/Logo.jpg" alt="Groovehub Logo" />
+                <h1>Groovehub</h1>
+              </div>
             </div>
           </div>
-          {{!-- <div class="gallery"> --}}
-            {{!-- <div class="gallery-container"> --}}
-              {{{body}}}
-            {{!-- </div> --}}
-          {{!-- </div> --}}
+          {{! <div class="gallery"> }}
+          {{! <div class="gallery-container"> }}
+          {{{body}}}
+          {{! </div> }}
+          {{! </div> }}
         </div>
       </div>
     </div>
 
-    
-<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-<script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
-<script>
-  $(document).foundation();
-</script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script
+      src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"
+    ></script>
+    <script>
+      $(document).foundation();
+    </script>
   </body>
 
 </html>
