@@ -7,6 +7,12 @@ h1 {
     font-size: 80px;
 }
 
+h1:hover, #main-logo:hover {
+    /* Set hover effect styles */
+    color: rgb(50, 167, 209);
+    cursor: pointer;
+}
+
 h2 {
     font-family: 'Darumadrop One', cursive;
     font-size: 50px;
