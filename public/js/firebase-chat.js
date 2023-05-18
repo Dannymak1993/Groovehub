@@ -11,18 +11,18 @@ function formatTimestamp(timestamp) {
   const date = new Date(timestamp);
   let hours = date.getHours();
   const minutes = String(date.getMinutes()).padStart(2, '0');
-  
+
   // Determine AM or PM suffix based on the hour
   const period = hours >= 12 ? 'PM' : 'AM';
-  
+
   // Convert hour from military time (0 - 23) to standard time (1 - 12)
   hours = hours % 12;
   // If the hours is 0 (i.e., 12 AM in military time), change it to 12
   hours = hours ? hours : 12;
-  
+
   // Pad the hours with 0 if necessary
   const hoursFormatted = String(hours).padStart(2, '0');
-  
+
   return `${hoursFormatted}:${minutes} ${period}`;
 }
 
@@ -32,7 +32,7 @@ async function getUsername() {
   const response = await fetch('/api/users/current');
   if (response.ok) {
     const data = await response.json();
-    
+
     return data.username;
   } else {
     console.error("Failed to get the current user's username");
@@ -41,7 +41,7 @@ async function getUsername() {
 }
 
 //This function receives the db object and playlist variable and sets up a unique chat instance for a particular instance 
-function initializeChat(db, playlistId, numUsersElement) {
+function initializeChat(db, playlistId, numUsersElement, userListElement) {
   //we call our get username function and use .then to resolve the promise
   getUsername().then((fetchedUsername) => {
     let username;
@@ -63,6 +63,16 @@ function initializeChat(db, playlistId, numUsersElement) {
 
         // Display the number of users in the chat room
         numUsersElement.textContent = numUsers + ' users in chat';
+
+        // Clear the user list
+        userListElement.innerHTML = '';
+
+        // Add each active user to the user list
+        for (let username in users) {
+          const userListItem = document.createElement('li');
+          userListItem.textContent = username;
+          userListElement.appendChild(userListItem);
+        }
       });
 
 
@@ -100,7 +110,7 @@ function initializeChat(db, playlistId, numUsersElement) {
         scrollToBottom(); //scroll to bottom after adding receiving a new message by other users
       });
 
-      
+
     } else {
       // Handle the case when the username is not fetched properly 
       console.error('Failed to fetch the username');
