@@ -67,7 +67,7 @@ function initializeChat(db, playlistId) {
 
       fetchChat.on("child_added", function (snapshot) {
         const messages = snapshot.val();
-        const message = `<li class=${username === messages.username ? "sent" : "receive"}><span>${messages.username} (${formatTimestamp(messages.timestamp)}): </span>${messages.message}</li>`; 
+        const message = `<li class=${username === messages.username ? "sent" : "receive"}><span>${messages.username} (${formatTimestamp(messages.timestamp)}):</span>${messages.message}</li>`; 
         document.getElementById("messages").innerHTML += message;
         scrollToBottom(); //scroll to bottom after adding receiving a new message by other users
       });

@@ -254,13 +254,29 @@ h2 {
     border-radius: 5px;
 }
 
+.chat li.sent, .chat li.receive{
+
+    display: block;
+    max-width: 70%;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+
+}
+
 .chat li.sent {
     background-color: #4caf50;
     color: white;
+    margin-left: auto;
+    margin-right: 10px;
+    border-bottom-right-radius: 0;
 }
 
 .chat li.receive {
     background-color: #e0e0e0;
+    margin-left: 10px;
+    margin-right: auto;
+    border-bottom-left-radius: 0;
 }
 
 .playlist-chat-wrapper {
