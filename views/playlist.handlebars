@@ -1,12 +1,13 @@
 <div class="centered-title">
   <h2>{{gallery.genre}}</h2>
+  <span class="num-users"></span>
 </div>
 
 <div id="iframe-chat-div">
   {{!-- <div id="iframe-div"> --}}
     <iframe style="border-radius:12px"
       src="https://open.spotify.com/embed/playlist/{{gallery.playlistId}}?utm_source=generator" width="600px"
-      height="800px" frameBorder="0" allowfullscreen=""
+      height="600px" frameBorder="0" allowfullscreen=""
       allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
   {{!-- </div> --}}
 
@@ -26,5 +27,8 @@
 <script src="/js/firebase-chat.js"></script>
 
 <script>
-  initializeChat(db, '{{gallery.playlistId}}');
+  window.onload = function() {
+    const numUsersElement = document.querySelector('.num-users');
+    initializeChat(db, '{{gallery.playlistId}}', numUsersElement);
+  }
 </script>
