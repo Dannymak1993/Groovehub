@@ -1,24 +1,23 @@
-<div class=".centered-title">
+<div class="centered-title">
   <h2>{{gallery.genre}}</h2>
 </div>
 
-
-  <div>
+  <div id="iframe-div">
     <iframe style="border-radius:12px"
       src="https://open.spotify.com/embed/playlist/{{gallery.playlistId}}?utm_source=generator" width="500px"
       height="800px" frameBorder="0" allowfullscreen=""
       allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
   </div>
 
-  <div class="chat">
+<div id="chat-div">
+  <div id="chat-bg" class="chat">
     <ul id="messages"></ul>
     <form id="message-form" onsubmit="sendMessage(event)">
       <input id="message-input" type="text" placeholder="Type a message" />
       <button id="message-btn" type="submit">Send</button>
     </form>
   </div>
-
-
+</div>
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
 <script src="/js/firebase-config.js"></script>
