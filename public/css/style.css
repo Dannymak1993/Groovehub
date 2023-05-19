@@ -9,7 +9,6 @@ h1 {
 
 h1:hover,
 #main-logo:hover {
-    /* Set hover effect styles */
     color: rgb(50, 167, 209);
     cursor: pointer;
 }
@@ -83,7 +82,6 @@ h2 {
     padding-bottom: 30px;
 }
 
-
 #iframe-chat-div {
     display: flex;
     align-items: center;
@@ -130,11 +128,7 @@ h2 {
     transition: opacity 0.5s ease;
 }
 
-.gallery-item:hover .gallery-name {
-    opacity: 1;
-}
-
-.gallery-item:hover .gallery-image {
+.gallery-item:hover .gallery-name .gallery-image {
     opacity: 1;
 }
 
@@ -156,87 +150,41 @@ h2 {
     animation: shake 0.5s;
 }
 
-
-.login-card {
-    text-align: center;
-    width: 100%;
-    max-width: 400px;
-}
-
 @keyframes shake {
     0% {
         transform: translateX(0);
     }
-
     10% {
         transform: translateX(-1px) rotate(-1deg);
     }
-
     20% {
         transform: translateX(1px) rotate(1deg);
     }
-
     30% {
         transform: translateX(-1px) rotate(-1deg);
     }
-
     40% {
         transform: translateX(1px) rotate(1deg);
     }
-
     50% {
         transform: translateX(-1px) rotate(-1deg);
     }
-
     60% {
         transform: translateX(1px) rotate(1deg);
     }
-
     70% {
         transform: translateX(-1px) rotate(-1deg);
     }
-
     80% {
         transform: translateX(1px) rotate(1deg);
     }
-
     90% {
         transform: translateX(-1px) rotate(-1deg);
     }
-
     100% {
         transform: translateX(0);
     }
 }
-
-@media screen and (min-width: 640px) {
-    .gallery-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .gallery-item {
-        width: 100%;
-        height: auto;
-    }
-}
-
-@media screen and (min-width: 1775px) {
-    .gallery-container {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .gallery-container .gallery-item {
-        width: 450px;
-        height: 450px;
-    }
-
-
-    .forms-container {
-        max-width: 1200px !important;
-        margin: 0 auto;
-    }
-}
-
 
 .forms-container {
     display: flex;
@@ -246,24 +194,18 @@ h2 {
     margin: 0 auto;
 }
 
-@media screen and (max-width: 640px) {
-    .forms-container {
-        flex-wrap: wrap;
-    }
-}
-
 .login-card {
     text-align: center;
     min-width: 350px;
     border: 2px solid #000000;
     padding: 20px;
+    width: 100%;
+    max-width: 400px;
 }
 
 .form-group label {
     text-align: left;
 }
-
-/* styling for chat */
 
 .centered-title {
     text-align: center;
@@ -290,7 +232,6 @@ h2 {
     margin-bottom: 10px;
     padding: 5px 10px;
     border-radius: 5px;
-
 }
 
 .chat li.sent {
@@ -347,59 +288,6 @@ h2 {
     color: #000000;
 }
 
-@media screen and (min-width: 640px) {
-    .playlist-chat-wrapper {
-        display: flex;
-    }
-
-    .playlist-container,
-    .chat-container {
-        flex: 1;
-        min-width: 300px;
-        /* Adjust this value to your desired width */
-    }
-}
-
-@media screen and (max-width: 600px) {
-    #iframe-chat-div {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        width: 100%;
-        gap: 25px;
-        flex-wrap: wrap;
-    }
-
-
-
-    .playlist-container,
-    .chat-container {
-        width: 100%;
-    }
-
-    .playlist-chat-wrapper {
-        margin-top: 1rem;
-        display: flex;
-        /* Add this line to make the containers flex */
-
-        flex-wrap: wrap;
-        /* Add this line to wrap the containers */
-
-    }
-
-    .playlist-container,
-    .chat-container,
-    #chat-bg {
-        padding: 1rem;
-        box-sizing: border-box;
-        flex: 1;
-        /* Add this line to make the containers flexible */
-        min-width: 300px;
-        width: 100%;
-        /* Add this line to make the containers occupy full width */
-    }
-}
-
 #message-btn {
     border: 2px solid #000000;
     background-color: #dddddd;
@@ -407,7 +295,6 @@ h2 {
     border-radius: 5px;
 }
 
-/* Add hover effect to the send button */
 #message-btn:hover {
     background-color: #43b1d5;
 }
@@ -415,8 +302,6 @@ h2 {
 .form-input {
     color: black;
 }
-
-/*working on this section*/
 
 .num-users {
     border: 2px solid #000000;
@@ -432,18 +317,87 @@ h2 {
 }
 
 .num-users:hover {
-background-color: #43b1d5;
+    background-color: #43b1d5;
 }
 
 .user-list-hidden {
     display: none;
 }
 
-/* Styles for the popup window */
 #user-list-popup {
     max-width: 200px;
-    display:flex;
+    display: flex;
     flex-direction: column;
     background-color: #000000;
     color: white;
+}
+
+@media screen and (min-width: 640px) {
+    .gallery-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-item {
+        width: 100%;
+        height: auto;
+    }
+
+    .playlist-chat-wrapper {
+        display: flex;
+    }
+
+    .playlist-container,
+    .chat-container {
+        flex: 1;
+        min-width: 300px;
+    }
+}
+
+@media screen and (min-width: 1775px) {
+    .gallery-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .gallery-container .gallery-item {
+        width: 450px;
+        height: 450px;
+    }
+
+    .forms-container {
+        max-width: 1200px !important;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .forms-container {
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #iframe-chat-div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        gap: 25px;
+        flex-wrap: wrap;
+    }
+
+    .playlist-chat-wrapper {
+        margin-top: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .playlist-container,
+    .chat-container,
+    #chat-bg {
+        padding: 1rem;
+        box-sizing: border-box;
+        flex: 1;
+        min-width: 300px;
+        width: 100%;
+    }
 }
